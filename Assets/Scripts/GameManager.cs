@@ -1,75 +1,91 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager gameManager;
-    public bool gamePaused = false, endGame = false, win=false;
     public int timeToEnd;
+    bool gamePaused = false;
+    bool endGame = false;
+    bool win = false;
+    public Text txt;
+
     void Start()
     {
-        if(gameManager == null)
-        {
+
+       if(gameManager == null)
+       {
             gameManager = this;
-        }
-        if(timeToEnd <= 0)
-        {
+       }
+
+       if(timeToEnd <= 0) 
+       {
             timeToEnd = 100;
-        }
+       }
 
-        Debug.Log("Time to end:" + timeToEnd + ".");
-        InvokeRepeating("Stopper",2 ,1);
-
+        Debug.Log("Time: " + timeToEnd + " s");
+        InvokeRepeating("Stopper", 2, 1);
     }
 
     void Update()
     {
+        txt.text = "Czas do końca " +timeToEnd.ToString()+ " sekund";
         if(Input.GetKeyDown(KeyCode.P))
         {
-            if (!gamePaused)
+            if(gamePaused)
             {
-                gamePaused = true;
-                Time.timeScale = 0f;
-                Debug.Log("Game is paused");
+                ResumeGame();
             }
             else
             {
-                gamePaused = false;
-                Time.timeScale = 1f;
-                Debug.Log("Game is running");
+                PauseGame();
             }
         }
-
-
     }
+
     void Stopper()
     {
         timeToEnd--;
-        Debug.Log("Time:" + timeToEnd + " s.");
-        if(timeToEnd<=0)
+        Debug.Log("Time: " + timeToEnd + " s");
+        
+        if (timeToEnd <= 0)
         {
             timeToEnd = 0;
             endGame = true;
-            if(endGame)
-            {
-               EndGame();
-            }
+        }
+
+        if (endGame)
+        {
+            EndGame();
         }
     }
 
-    private void EndGame()
+    public void PauseGame()
+    {
+        Debug.Log("Pause Game");
+        Time.timeScale = 0f;
+        gamePaused = true;
+    }
+
+    public void ResumeGame()
+    {
+        Debug.Log("Resume Game");
+        Time.timeScale = 1f;
+        gamePaused = false;
+    }
+
+    public void EndGame()
     {
         CancelInvoke("Stopper");
-        if(win)
+        if (win)
         {
-            Debug.Log("You win! Reload?");
-        }
-        else
+            Debug.Log("You Win!!! Reoad?");
+        } else
         {
-            Debug.Log("You loose, Reload?");
-            gamePaused = true;
+            Debug.Log("You Lose!!! Reload?");
         }
     }
+
 }
