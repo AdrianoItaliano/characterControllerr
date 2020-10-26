@@ -19,7 +19,6 @@ public class GameManager : MonoBehaviour
        {
             gameManager = this;
        }
-
        if(timeToEnd <= 0) 
        {
             timeToEnd = 100;
@@ -44,7 +43,7 @@ public class GameManager : MonoBehaviour
             }
         }
     }
-
+    
     void Stopper()
     {
         timeToEnd--;
@@ -55,7 +54,6 @@ public class GameManager : MonoBehaviour
             timeToEnd = 0;
             endGame = true;
         }
-
         if (endGame)
         {
             EndGame();
@@ -81,8 +79,9 @@ public class GameManager : MonoBehaviour
         CancelInvoke("Stopper");
         if (win)
         {
-            Debug.Log("You Win!!! Reoad?");
-        } else
+            Debug.Log("You Win!!! Reload?");
+        } 
+        else
         {
             Debug.Log("You Lose!!! Reload?");
         }
