@@ -145,7 +145,7 @@ PrefabInstance:
     - target: {fileID: 2244950221804434847, guid: 0a00fdb723f11fc4aa33c51fa08304e1,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.5465915
+      value: 3.09
       objectReference: {fileID: 0}
     - target: {fileID: 2244950221804434847, guid: 0a00fdb723f11fc4aa33c51fa08304e1,
         type: 3}
@@ -346,7 +346,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pref: {fileID: 1851446052228440489, guid: fb3558743b1a056409d50a5e2520b837, type: 3}
-  bulletSpeed: 60000
+  bulletSpeed: 50000
 --- !u!1 &249072722
 GameObject:
   m_ObjectHideFlags: 0
@@ -534,7 +534,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 309503985}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0.904, y: 0.362, z: -2.5525918}
+  m_LocalPosition: {x: 1.15, y: 0.21, z: -2.5525918}
   m_LocalScale: {x: 0.2, y: 0.020000001, z: 0.2}
   m_Children: []
   m_Father: {fileID: 1254193224}
@@ -2381,7 +2381,7 @@ PrefabInstance:
     - target: {fileID: 2038922969594646298, guid: ab97ffc7e77112441bff0bd7593fba8d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.4537191
+      value: 4.182873
       objectReference: {fileID: 0}
     - target: {fileID: 2038922969594646298, guid: ab97ffc7e77112441bff0bd7593fba8d,
         type: 3}
@@ -4183,7 +4183,7 @@ GameObject:
   - component: {fileID: 1950314300}
   - component: {fileID: 1950314299}
   - component: {fileID: 1950314298}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
