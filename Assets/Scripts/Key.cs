@@ -13,14 +13,11 @@ public class Key : PickUp
     public override void Picked()
     {
         GameManager.gameManager.AddKey(color);
-
-
-
         base.Picked();
     }
     void Update()
     {
-        
+        Rotation();
     }
 
 

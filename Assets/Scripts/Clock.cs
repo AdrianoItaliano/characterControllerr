@@ -20,7 +20,7 @@ public class Clock : PickUp
         }
 
         GameManager.gameManager.AddTime((int)time * sign);
-
+        
         base.Picked();
     }
     private void Update()
